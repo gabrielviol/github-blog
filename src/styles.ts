@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 export const Header = styled.header`
     display: flex;
-    position: absolute;
     justify-content: center;
+`
+export const Banner = styled.div`
+    display: flex;
     width: 100%;
-
-    img {
-        display: flex;
-        height: 296px;
-    }
+    max-width: 1120px;
+    margin: 4rem auto 0;
+    padding: 0 1.5rem;
+    background-color: ${props => props.theme['base-background']};
 `
