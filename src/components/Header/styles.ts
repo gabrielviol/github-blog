@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-export const Container = styled.header`
-    display: flex;
-    flex: 1;
-    width: 100%;
-    justify-content: center;
+export const Container = styled.div`
+    overflow: hidden;
+    
+        img{
+            display: block;
+             margin-left: auto;
+             margin-right: auto
+            }
+    
 `
