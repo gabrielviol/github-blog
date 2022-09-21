@@ -1,34 +1,35 @@
 import styled from "styled-components";
 
 export const Content = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 54rem;
-    height: 13.25rem;
-    position: absolute;
+    width: 864px;
+    height: 212px;
+    margin: 0 auto;
+    position: relative;
+    padding: 2rem 2.5rem;
     background: ${props => props.theme['base-profile']};
     border-radius: 10px;
-    margin-top: -9.5rem;
-    padding: 1rem 2.5rem;
+    box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
+    
+    margin-top: -5.5rem;
     div{
         display: flex;
+    }
+    div:nth-child(3){
+        margin-top: 1rem;
+        gap: 2rem;
     }
 `
 export const ContentProfile = styled.div`
     display: flex;    
     flex-direction: column;
-    padding: 2rem;
+    margin-left: 2rem;
     gap: 0.5rem;
     p{
         color: ${props => props.theme['base-text']};
         font-size: 16px;
         line-height: 160%;
     }
-    div{
-        margin-top: 1rem;
-        gap: 2rem;
-    }
+    
     span{
         font-family: 'Nunito', sans-serif;
         font-weight: 700;
