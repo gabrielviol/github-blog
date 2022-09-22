@@ -1,6 +1,6 @@
 import { Header } from "../../components/Header";
 import { Profile } from "./Profile";
-import { Container, InputContent, TableContainer } from "./styles";
+import { Container, InputContent, TableContainer, TableContent } from "./styles";
 
 export function Blog() {
     return (
@@ -13,49 +13,39 @@ export function Blog() {
                         <span>Publicações</span>
                         <p>6 Publicações</p>
                     </div>
-                    <input type="text" />
+                    <input type="text" placeholder="Buscar conteúdo"/>
                     <TableContainer>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <h1>Projeto JavaScript</h1>
+                        <TableContent>
+                            <div>
+                                <h1>Projeto JavaScript asdasd asdasd</h1>
                                 <span>Há 1 dia</span>
-                                <p>description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto </p>
-                            </td>
-                            <td>
-                                <h1>Projeto JavaScript</h1>
+                            </div>
+                            <p>description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto </p>
+                        </TableContent>
+                        <TableContent>
+                            <div>
+                                <h1>Projeto JavaScript asdasd asdasd</h1>
                                 <span>Há 1 dia</span>
-                                <p>description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto </p>
-                            </td>
-                            <td>
-                                <h1>Projeto JavaScript</h1>
+                            </div>
+                            <p>description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto </p>
+                        </TableContent>
+                        <TableContent>
+                            <div>
+                                <h1>Projeto JavaScript asdasd asdasd</h1>
                                 <span>Há 1 dia</span>
-                                <p>description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto </p>
-                            </td>
-                            <td>
-                                <h1>Projeto JavaScript</h1>
+                            </div>
+                            <p>description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto </p>
+                        </TableContent>
+                        <TableContent>
+                            <div>
+                                <h1>Projeto JavaScript asdasd asdasd</h1>
                                 <span>Há 1 dia</span>
-                                <p>description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto </p>
-                            </td>
-                            <td>
-                                <h1>Projeto JavaScript</h1>
-                                <span>Há 1 dia</span>
-                                <p>description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto </p>
-                            </td>
-                            <td>
-                                <h1>Projeto JavaScript</h1>
-                                <span>Há 1 dia</span>
-                                <p>description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto </p>
-                            </td>
-                            <td>
-                                <h1>Projeto JavaScript</h1>
-                                <span>Há 1 dia</span>
-                                <p>description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto </p>
-                            </td>
-                        </tr>                        
-                    </tbody>
+                            </div>
+                            <p>description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto description do projeto </p>
+                        </TableContent>
+
                     </TableContainer>
-                    </InputContent>
+                </InputContent>
             </Container>
         </div>
     )
