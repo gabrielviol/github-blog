@@ -1,8 +1,29 @@
+import { useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { Profile } from "./Profile";
 import { Container, InputContent, TableContainer, TableContent } from "./styles";
+import axios from 'axios'
+
+interface reposProps {
+    id: string,
+    name: string,
+    description: string,
+    pushed_at: string,
+    html_url: string,
+    fork: number,
+    license: object,
+    archived: boolean
+}
 
 export function Blog() {
+    const [data, setData] = useState<reposProps[]>([])
+
+    useEffect(() => {
+        axios.get('https://api.github.com/users/gabrielviol')
+            .then(response => setData(response.data))
+            console.log(data)
+    },[])
+
     return (
         <div>
             <Header />
