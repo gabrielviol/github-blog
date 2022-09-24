@@ -7,7 +7,7 @@ import { reposProps } from "..";
 
 
 
-export function Profile({ name, bio, followers, avatar, company, login }: reposProps) {
+export function Profile({ name, bio, followers, avatar, company, nick }: reposProps) {
     
 
     return (
@@ -21,7 +21,7 @@ export function Profile({ name, bio, followers, avatar, company, login }: reposP
                     </Id>
                     <p>{bio}</p>
                     <div>
-                        <p>{login}</p>
+                        <p>{nick}</p>
                         <p>{company}</p>
                         <p>{followers} Seguidores</p>
                     </div>
