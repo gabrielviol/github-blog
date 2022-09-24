@@ -1,22 +1,29 @@
 import { Content, Id, ContentProfile } from "./styles";
 
-import avatar from '../../../assets/avatar.svg'
 
-export function Profile() {
+import avatar from '../../../assets/avatar.svg'
+import { reposProps } from "..";
+
+
+
+
+export function Profile({ name, bio, followers, avatar, company, login }: reposProps) {
+    
+
     return (
         <Content>
             <div>
                 <img src={avatar} alt="ImageProfile" />
                 <ContentProfile>
                     <Id>
-                        <span>Gabriel Oliveira</span>
-                        <a href="/">GITHUB</a>
+                        <span>{name}</span>
+                        <a href="https://github.com/gabrielviol">GITHUB</a>
                     </Id>
-                    <p>Lorem ipsum dolor sit amet, consectetur ionem temporibus labore cumque commodi, quibusdam</p>
+                    <p>{bio}</p>
                     <div>
-                        <p>Github</p>
-                        <p>Empresa</p>
-                        <p>10 Seguidores</p>
+                        <p>{login}</p>
+                        <p>{company}</p>
+                        <p>{followers} Seguidores</p>
                     </div>
                 </ContentProfile>
             </div>

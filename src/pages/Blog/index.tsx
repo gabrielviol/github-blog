@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { Profile } from "./Profile";
-import { Container, InputContent, TableContainer, TableContent } from "./styles";
 import axios from 'axios'
 
-interface reposProps {
+import { Container, InputContent, TableContainer, TableContent } from "./styles";
+
+export interface reposProps {
     id: string,
     name: string,
     description: string,
@@ -23,12 +24,13 @@ export function Blog() {
             .then(response => setData(response.data))
             console.log(data)
     },[])
+    
 
     return (
         <div>
             <Header />
             <Container>
-                <Profile />
+                <Profile name={data.name} bio={data.bio} avatar={data.avatar_url} followers={data.followers} company={data.company} nick={data.login}/>
                 <InputContent>
                     <div>
                         <span>Publicações</span>

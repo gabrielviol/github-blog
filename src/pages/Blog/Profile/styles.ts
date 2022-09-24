@@ -18,6 +18,11 @@ export const Content = styled.div`
         margin-top: 1rem;
         gap: 2rem;
     }
+    img{
+        width: 148px;
+        height: 148px;
+        border-radius: 8px;
+    }
 `
 export const ContentProfile = styled.div`
     display: flex;    
