@@ -5,24 +5,22 @@ import axios from 'axios'
 
 import { Container, InputContent, TableContainer, TableContent } from "./styles";
 
-export interface reposProps {
+export interface profileProps {
     id: string,
     name: string,
-    description: string,
-    pushed_at: string,
-    html_url: string,
-    fork: number,
-    license: object,
-    archived: boolean
+    bio: string,
+    followers: number,
+    avatar: string,
+    company: string,
+    nick: string
 }
 
 export function Blog() {
-    const [data, setData] = useState<reposProps[]>([])
+    const [data, setData] = useState<profileProps[]>([])
 
     useEffect(() => {
         axios.get('https://api.github.com/users/gabrielviol')
             .then(response => setData(response.data))
-            console.log(data)
     },[])
     
 
@@ -30,7 +28,7 @@ export function Blog() {
         <div>
             <Header />
             <Container>
-                <Profile name={data.name} bio={data.bio} avatar={data.avatar_url} followers={data.followers} company={data.company} nick={data.login}/>
+                <Profile id={data.id}  name={data.name} bio={data.bio} avatar={data.avatar_url} followers={data.followers} company={data.company} nick={data.login}/>
                 <InputContent>
                     <div>
                         <span>Publicações</span>

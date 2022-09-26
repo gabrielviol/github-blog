@@ -1,13 +1,11 @@
 import { Content, Id, ContentProfile } from "./styles";
 
-
-import avatar from '../../../assets/avatar.svg'
-import { reposProps } from "..";
+import { profileProps } from "..";
 
 
 
 
-export function Profile({ name, bio, followers, avatar, company, nick }: reposProps) {
+export function Profile({ name, bio, followers, avatar, company, nick }: profileProps) {
     
 
     return (
