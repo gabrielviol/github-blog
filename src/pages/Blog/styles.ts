@@ -72,7 +72,6 @@ export const TableContent = styled.div`
         width: 100%;
         display: flex;
         justify-content: space-between;
-        border: 1px solid;
         
         h1{
             font-weight: 700;
