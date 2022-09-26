@@ -40,6 +40,7 @@ export function Blog() {
             .then(response => setRepos(response.data))
     }, [])
 
+
     return (
         <div>
             <Header />
@@ -48,7 +49,7 @@ export function Blog() {
                 <InputContent>
                     <div>
                         <span>Publicações</span>
-                        <p>6 Publicações</p>
+                        <p>{repos.length} Publicações</p>
                     </div>
                     <input type="text" placeholder="Buscar conteúdo" />
                 </InputContent>
