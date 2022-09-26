@@ -50,25 +50,29 @@ export const InputContent = styled.div`
 
 export const TableContainer = styled.table`
     width: 864px;
+    margin: 0 auto;
+    margin-top: 4rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin: 2.5rem 0;
         
 `
 export const TableContent = styled.div`
         width: 416px;
         height: 260px;
+        padding: 2rem;
         display: flex;
         flex-direction: column;
-        padding: 2.5rem 2rem;
+        gap: 2rem;
+        align-items: flex-start;
         border-radius: 10px;
         background: ${props => props.theme['base-post']};
     
     div{
+        width: 100%;
         display: flex;
-        align-items: flex-start;
-
+        justify-content: space-between;
+        border: 1px solid;
         
         h1{
             font-weight: 700;
@@ -77,8 +81,8 @@ export const TableContent = styled.div`
             color: ${props => props.theme['base-title']};
         }
         span{
-            margin-top: 2px;
             font-weight: 400;
+            margin-top: 2px;
             font-size: 14px;
             line-height: 160%;
             color: ${props => props.theme['base-span']};
@@ -86,9 +90,9 @@ export const TableContent = styled.div`
         }        
     }
     p{
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 160%;
-            color: ${props => props.theme['base-text']};
-        }
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 160%;
+        color: ${props => props.theme['base-text']};
+    }
 `
