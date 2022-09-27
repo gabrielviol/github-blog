@@ -1,12 +1,14 @@
 import { Content, Id, ContentProfile } from "./styles";
 
 import { profileProps } from "..";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { brands } from '@fortawesome/fontawesome-svg-core/import.macro'
+import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 
 
 
 
 export function Profile({ name, bio, followers, avatar, company, nick }: profileProps) {
-    
 
     return (
         <Content>
@@ -20,7 +22,10 @@ export function Profile({ name, bio, followers, avatar, company, nick }: profile
                     <p>{bio}</p>
                     <div>
                         <p>{nick}</p>
-                        <p>{company}</p>
+                        <p>
+                        <FontAwesomeIcon icon={brands('github')} />
+                            {company}
+                        </p>
                         <p>{followers} Seguidores</p>
                     </div>
                 </ContentProfile>
