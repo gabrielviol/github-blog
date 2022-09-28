@@ -29,6 +29,7 @@ export const ContentProfile = styled.div`
     flex-direction: column;
     margin-left: 2rem;
     gap: 0.5rem;
+
     p{
         color: ${props => props.theme['base-text']};
         font-size: 16px;
@@ -42,10 +43,32 @@ export const ContentProfile = styled.div`
         line-height: 130%;
         color: ${props => props.theme['base-title']};
     }
+    svg{
+        font-size: 20px;
+        margin-right: -20px;
+        color: ${props => props.theme['base-label']};
+    }
 `
 
 export const Id = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;    
+
+    div{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+       a{
+        color: ${props => props.theme['blue']};
+        font-size: 12px;
+        line-height: 160%;
+        font-weight: 700;
+        text-decoration: none;
+       } 
+       svg{
+        font-size: 14px;
+        color: ${props => props.theme['blue']};
+       }
+    }
 `
