@@ -57,16 +57,16 @@ export function Blog() {
                     {repos.map(repository => {
                         return (
                             <a href={repository.html_url}>
-                            <TableContent key={repository.id}>
-                                <div >
-                                    <a href={repository.html_url}>{repository.name}</a>
-                                    <span>{formatDistanceToNow(new Date(repository.pushed_at), {addSuffix: true, locale: ptBR})}</span>
-                                </div>
-                                <p>{repository.description}</p>
-                                
-                            </TableContent>
+                                <TableContent key={repository.id}>
+                                    <div >
+                                        <a href={repository.html_url}>{repository.name}</a>
+                                        <span>{formatDistanceToNow(new Date(repository.pushed_at), { addSuffix: true, locale: ptBR })}</span>
+                                    </div>
+                                    <p>{repository.description}</p>
+
+                                </TableContent>
                             </a>
-                            
+
                         )
                     })}
                 </TableContainer>
