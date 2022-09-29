@@ -19,8 +19,10 @@ export function Profile({ name, bio, followers, avatar, company, nick }: profile
                     <Id>
                         <span>{name}</span>
                         <div>
-                        <a href="https://github.com/gabrielviol">GITHUB</a>
-                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                            <a href="https://github.com/gabrielviol">
+                                GITHUB
+                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                            </a>
                         </div>
                     </Id>
                     <p>{bio}</p>
@@ -33,7 +35,7 @@ export function Profile({ name, bio, followers, avatar, company, nick }: profile
                         <p>
                             {company}
                         </p>
-                        <FontAwesomeIcon icon={faUserGroup}  />
+                        <FontAwesomeIcon icon={faUserGroup} />
                         <p>
                             {followers} Seguidores
                         </p>

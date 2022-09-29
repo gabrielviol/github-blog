@@ -56,6 +56,9 @@ export const TableContainer = styled.table`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    a{
+        text-decoration: none;
+    }
         
 `
 export const TableContent = styled.div`
@@ -68,6 +71,13 @@ export const TableContent = styled.div`
         align-items: flex-start;
         border-radius: 10px;
         background: ${props => props.theme['base-post']};
+        
+        
+
+        &:hover{
+        border: 2px solid ${props => props.theme['base-label']};
+        overflow: hidden;
+    }
     
     div{
         width: 100%;
@@ -76,11 +86,12 @@ export const TableContent = styled.div`
         align-items: flex-start;
         word-break: break-word;
         
-        h1{
+        a{
             font-weight: 700;
             font-size: 20px;
             line-height: 160%;
             color: ${props => props.theme['base-title']};
+            text-decoration: none;
         }
         span{
             font-weight: 400;

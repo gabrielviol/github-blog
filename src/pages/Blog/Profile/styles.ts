@@ -53,14 +53,22 @@ export const ContentProfile = styled.div`
 export const Id = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-between;    
+    justify-content: space-between;   
 
     div{
+        width: 70px;
         display: flex;
         align-items: center;
         gap: 5px;
+        transition: .5s;
+        
        a{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
         color: ${props => props.theme['blue']};
+
         font-size: 12px;
         line-height: 160%;
         font-weight: 700;
@@ -70,5 +78,9 @@ export const Id = styled.div`
         font-size: 14px;
         color: ${props => props.theme['blue']};
        }
+    }
+    div:hover{
+        border-bottom: 1px solid ${props => props.theme['blue']};
+        transform: scale(1);
     }
 `
