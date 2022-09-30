@@ -56,10 +56,10 @@ export function Blog() {
                 <TableContainer>
                     {repos.map(repository => {
                         return (
-                            <a href={repository.html_url}>
+                            <a href="/post">
                                 <TableContent key={repository.id}>
                                     <div >
-                                        <a href={repository.html_url}>{repository.name}</a>
+                                        <a href="/post">{repository.name}</a>
                                         <span>{formatDistanceToNow(new Date(repository.pushed_at), { addSuffix: true, locale: ptBR })}</span>
                                     </div>
                                     <p>{repository.description}</p>
