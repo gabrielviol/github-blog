@@ -49,7 +49,7 @@ export const TableContainer = styled.table`
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;        
 `
-export const PostContent = styled(Link)`
+export const PostContent = styled.a`
         width: 416px;
         height: 260px;
         padding: 2rem;

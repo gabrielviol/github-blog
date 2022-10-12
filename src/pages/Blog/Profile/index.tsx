@@ -5,15 +5,32 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { profileProps } from "..";
 
 import { Content, Id, ContentProfile } from "./styles";
+import { useEffect } from 'react';
+import { api } from '../../../services/api';
+import { useFetch } from '../../../hooks/useFetch';
 
-export function Profile({ id, name, bio, followers, avatar, company, nick }: profileProps) {
+type User = {
+    login: string;
+    avatar_url: string;
+    html_url: string;
+    followers: number;
+    name: string;
+    bio: string;
+    company: string;
+  };
+
+export function Profile() {
+    const { data: user, error } = useFetch<User>("/users/gabrielviol");
+
+    if (!user || error) return null;
+
     return (
         <Content>
             <div>
-                <img src={avatar} alt="ImageProfile" />
+                <img src={user.avatar_url} alt="ImageProfile" />
                 <ContentProfile>
                     <Id>
-                        <span>{name}</span>
+                        <span>{user.name}</span>
                         <div>
                             <a href="https://github.com/gabrielviol">
                                 GITHUB
@@ -21,19 +38,19 @@ export function Profile({ id, name, bio, followers, avatar, company, nick }: pro
                             </a>
                         </div>
                     </Id>
-                    <p>{bio}</p>
+                    <p>{user.bio}</p>
                     <div>
                         <FontAwesomeIcon icon={faGithub} />
                         <p>
-                            {nick}
+                            {user.login}
                         </p>
                         <FontAwesomeIcon icon={faBuilding} />
                         <p>
-                            {company}
+                            {user.company}
                         </p>
                         <FontAwesomeIcon icon={faUserGroup} />
                         <p>
-                            {followers} Seguidores
+                            {user.followers} Seguidores
                         </p>
                     </div>
                 </ContentProfile>
