@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom'
 
 export const InputContent = styled.div`
 width: 864px;
@@ -46,45 +47,50 @@ export const TableContainer = styled.table`
     margin-top: 4rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    a{
-        text-decoration: none;
-    }
-        
+    gap: 2rem;        
 `
-
-
-export const TableContent = styled.div`
+export const PostContent = styled(Link)`
         width: 416px;
         height: 260px;
         padding: 2rem;
+
         display: flex;
         flex-direction: column;
         gap: 2rem;
         align-items: flex-start;
         border-radius: 10px;
-        background: ${props => props.theme['base-post']};
-        
-        
 
+        text-decoration: none;
+        background: ${props => props.theme['base-post']};      
+        
         &:hover{
-        border: 2px solid ${props => props.theme['base-label']};
-        overflow: hidden;
-    }
+        outline: 2px solid ${props => props.theme['base-label']};
+
+        h1{
+            text-decoration: underline;
+        }
+        
+        }
     
     div{
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        word-break: break-word;
         
-        a{
+        h1{
             font-weight: 700;
             font-size: 20px;
             line-height: 160%;
             color: ${props => props.theme['base-title']};
             text-decoration: none;
+
+            overflow: hidden;
+            display: -webkit-box;
+            line-height: 140%;
+            max-height: 80px;      
+            -webkit-line-clamp: 2; 
+            -webkit-box-orient: vertical;
         }
         span{
             font-weight: 400;
@@ -100,5 +106,9 @@ export const TableContent = styled.div`
         font-size: 16px;
         line-height: 160%;
         color: ${props => props.theme['base-text']};
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
     }
 `

@@ -5,18 +5,10 @@ import { useForm } from "react-hook-form";
 import * as zod from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { format, formatDistanceToNow } from "date-fns";
-import { pt, ptBR } from "date-fns/locale";
+import { formatDistanceToNow } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
-import { InputContent, TableContainer, TableContent } from "./styles"
-
-interface reposProps {
-    id: string,
-    name: string,
-    description: string,
-    pushed_at: string,
-    html_url: string
-}
+import { InputContent, PostContent, TableContainer } from "./styles"
 
 const USERNAME = "gabrielviol";
 const REPO = "github-blog";
@@ -46,15 +38,15 @@ const searchSchema = zod.object({
 
 type SearchSchemaType = zod.infer<typeof searchSchema>;
 
-export function Posts(){
-    const [response , setResponse] = useState<IssuesResponseProps>()
+export function Posts() {
+    const [response, setResponse] = useState<IssuesResponseProps>()
 
     const { handleSubmit, register } = useForm<SearchSchemaType>({
         resolver: zodResolver(searchSchema),
     });
 
-    async function loadPosts(query?: string){
-        try{
+    async function loadPosts(query?: string) {
+        try {
             const response = await api.get(
                 `/search/issues?q=${query ?? ""}repo:${USERNAME}/${REPO}`
             );
@@ -72,42 +64,38 @@ export function Posts(){
                 ),
             };
             setResponse(issue);
-            } catch {}
-        }
-        async function onSubmit(data: SearchSchemaType){
-            await loadPosts(data.query);
-        }
+        } catch { }
+    }
+    async function onSubmit(data: SearchSchemaType) {
+        await loadPosts(data.query);
+    }
 
-        useEffect(() =>{
-            loadPosts();
-        }, []);
+    useEffect(() => {
+        loadPosts();
+    }, []);
 
-    return(
+    return (
         <>
             <InputContent>
-                    <div>
-                        <span>Publicações</span>
-                        <p>{response?.total ?? 0} Publicações</p>
-                    </div>
-                    <input type="text" placeholder="Buscar conteúdo" />
-                </InputContent>
-                <TableContainer>
-                    {response?.posts.map(post => {
-                        return (
-                            <a href="/post" key={post.id}>
-                                <TableContent >
-                                    <div >
-                                        <a href="/post">{post.title}</a>
-                                        <span>{formatDistanceToNow(new Date(post.updatedAt), { addSuffix: true, locale: ptBR })}</span>
-                                    </div>
-                                    <p>{post.body}</p>
-
-                                </TableContent>
-                            </a>
-
-                        )
-                    })}
-                </TableContainer>
+                <div>
+                    <span>Publicações</span>
+                    <p>{response?.total ?? 0} Publicações</p>
+                </div>
+                <input type="text" placeholder="Buscar conteúdo" />
+            </InputContent>
+            <TableContainer>
+                {response?.posts.map(post => {
+                    return (
+                        <PostContent to={`/post/${post.id}`} key={post.id}>
+                            <div >
+                                <h1>{post.title}</h1>
+                                <span>{formatDistanceToNow(new Date(post.updatedAt), { addSuffix: true, locale: ptBR })}</span>
+                            </div>
+                            <p>{post.body}</p>
+                        </PostContent>
+                    )
+                })}
+            </TableContainer>
         </>
     )
 }
