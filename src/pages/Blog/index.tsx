@@ -1,4 +1,4 @@
-import { Header } from "../../components/Header";
+import { Header } from "../../components/layout/Header";
 import { Profile } from "./Profile";
 import { Posts } from "./Posts";
 import { Container } from "./styles";
@@ -16,7 +16,6 @@ export interface profileProps {
 export function Blog() {
     return (
         <div>
-            <Header />
             <Container>
                 <Profile />
                 <Posts />

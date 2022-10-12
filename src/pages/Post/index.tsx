@@ -1,9 +1,6 @@
-import { Header } from "../../components/Header";
-
-export function Blog() {
+export function Post() {
     return (
         <>
-        <Header/>
         
         </>
     )

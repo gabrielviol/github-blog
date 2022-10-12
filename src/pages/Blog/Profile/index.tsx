@@ -2,11 +2,7 @@ import { faBuilding, faUserGroup, faArrowUpRightFromSquare } from '@fortawesome/
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
-import { profileProps } from "..";
-
 import { Content, Id, ContentProfile } from "./styles";
-import { useEffect } from 'react';
-import { api } from '../../../services/api';
 import { useFetch } from '../../../hooks/useFetch';
 
 type User = {
@@ -17,7 +13,7 @@ type User = {
     name: string;
     bio: string;
     company: string;
-  };
+};
 
 export function Profile() {
     const { data: user, error } = useFetch<User>("/users/gabrielviol");
