@@ -56,7 +56,7 @@ export function Posts(){
     async function loadPosts(query?: string){
         try{
             const response = await api.get(
-                `/search/issues?q${query ?? ""}repo:${USERNAME}/${REPO}`
+                `/search/issues?q=${query ?? ""}repo:${USERNAME}/${REPO}`
             );
             const { total_count, items } = response.data;
 
@@ -80,12 +80,7 @@ export function Posts(){
 
         useEffect(() =>{
             loadPosts();
-        }, []); 
-
-    // useEffect(() => {
-    //     api.get('/users/gabrielviol/repos')
-    //         .then(response => setRepos(response.data))
-    // }, [])
+        }, []);
 
     return(
         <>
@@ -96,23 +91,23 @@ export function Posts(){
                     </div>
                     <input type="text" placeholder="Buscar conteúdo" />
                 </InputContent>
-                {/* <TableContainer>
-                    {repos.map(repository => {
+                <TableContainer>
+                    {response?.posts.map(post => {
                         return (
-                            <a href="/post" key={repository.id}>
+                            <a href="/post" key={post.id}>
                                 <TableContent >
                                     <div >
-                                        <a href="/post">{repository.name}</a>
-                                        <span>{formatDistanceToNow(new Date(repository.pushed_at), { addSuffix: true, locale: ptBR })}</span>
+                                        <a href="/post">{post.title}</a>
+                                        <span>{formatDistanceToNow(new Date(post.updatedAt), { addSuffix: true, locale: ptBR })}</span>
                                     </div>
-                                    <p>{repository.description}</p>
+                                    <p>{post.body}</p>
 
                                 </TableContent>
                             </a>
 
                         )
                     })}
-                </TableContainer> */}
+                </TableContainer>
         </>
     )
 }
