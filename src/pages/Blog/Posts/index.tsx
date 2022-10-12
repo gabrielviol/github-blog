@@ -86,7 +86,7 @@ export function Posts() {
             <TableContainer>
                 {response?.posts.map(post => {
                     return (
-                        <PostContent >
+                        <PostContent to={`/post/${post.id}`} key={post.id}>
                             <div >
                                 <h1>{post.title}</h1>
                                 <span>{formatDistanceToNow(new Date(post.updatedAt), { addSuffix: true, locale: ptBR })}</span>

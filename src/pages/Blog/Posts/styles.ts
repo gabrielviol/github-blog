@@ -41,15 +41,16 @@ input::placeholder{
 }
 `
 
-export const TableContainer = styled.table`
+export const TableContainer = styled.div`
     width: 864px;
     margin: 0 auto;
     margin-top: 4rem;
+
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;        
 `
-export const PostContent = styled.a`
+export const PostContent = styled(Link)`
         width: 416px;
         height: 260px;
         padding: 2rem;
