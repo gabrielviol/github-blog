@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { Profile } from "./Profile";
+import { Posts } from "./Posts";
 
 import axios from 'axios'
 
-import { Container, InputContent, TableContainer, TableContent } from "./styles";
-import { format, formatDistanceToNow } from "date-fns";
-import { pt, ptBR } from "date-fns/locale";
+import { Container } from "./styles";
+
 
 export interface profileProps {
     id: string,
@@ -46,30 +46,7 @@ export function Blog() {
             <Header />
             <Container>
                 <Profile id={data.id} name={data.name} bio={data.bio} avatar={data.avatar_url} followers={data.followers} company={data.company} nick={data.login} />
-                <InputContent>
-                    <div>
-                        <span>Publicações</span>
-                        <p>{repos.length} Publicações</p>
-                    </div>
-                    <input type="text" placeholder="Buscar conteúdo" />
-                </InputContent>
-                <TableContainer>
-                    {repos.map(repository => {
-                        return (
-                            <a href="/post">
-                                <TableContent key={repository.id}>
-                                    <div >
-                                        <a href="/post">{repository.name}</a>
-                                        <span>{formatDistanceToNow(new Date(repository.pushed_at), { addSuffix: true, locale: ptBR })}</span>
-                                    </div>
-                                    <p>{repository.description}</p>
-
-                                </TableContent>
-                            </a>
-
-                        )
-                    })}
-                </TableContainer>
+                <Posts daata={repos} />
 
             </Container>
         </div>

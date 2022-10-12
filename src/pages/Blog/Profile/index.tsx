@@ -1,5 +1,3 @@
-
-
 import { Content, Id, ContentProfile } from "./styles";
 
 import { profileProps } from "..";
@@ -8,9 +6,6 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faBuilding, faUserGroup, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 
 export function Profile({ name, bio, followers, avatar, company, nick }: profileProps) {
-
-
-
     return (
         <Content>
             <div>
