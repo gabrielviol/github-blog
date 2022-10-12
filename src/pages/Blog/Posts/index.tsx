@@ -1,10 +1,9 @@
-import axios from 'axios'
-
 import { useEffect, useState } from "react";
 import { format, formatDistanceToNow } from "date-fns";
 import { pt, ptBR } from "date-fns/locale";
 
 import { InputContent, TableContainer, TableContent } from "./styles"
+import { api } from '../../../services/api';
 
 interface reposProps {
     id: string,
@@ -19,7 +18,7 @@ export function Posts(){
     const [repos, setRepos] = useState<reposProps[]>([])
 
     useEffect(() => {
-        axios.get('https://api.github.com/users/gabrielviol/repos')
+        api.get('/users/gabrielviol/repos')
             .then(response => setRepos(response.data))
     }, [])
 

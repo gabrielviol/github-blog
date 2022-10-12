@@ -4,7 +4,7 @@ import { Profile } from "./Profile";
 import { Posts } from "./Posts";
 import { Container } from "./styles";
 
-import axios from 'axios'
+import { api } from "../../services/api";
 
 
 export interface profileProps {
@@ -21,7 +21,7 @@ export function Blog() {
     const [data, setData] = useState<profileProps[]>([])    
 
     useEffect(() => {
-        axios.get('https://api.github.com/users/gabrielviol')
+        api.get('/users/gabrielviol')
             .then(response => setData(response.data))
     }, [])
 
