@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faBuilding, faUserGroup, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 
-export function Profile({ name, bio, followers, avatar, company, nick }: profileProps) {
+export function Profile({ id, name, bio, followers, avatar, company, nick }: profileProps) {
     return (
         <Content>
             <div>
