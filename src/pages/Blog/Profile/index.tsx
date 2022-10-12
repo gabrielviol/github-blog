@@ -1,9 +1,10 @@
-import { Content, Id, ContentProfile } from "./styles";
-
-import { profileProps } from "..";
+import { faBuilding, faUserGroup, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faBuilding, faUserGroup, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+
+import { profileProps } from "..";
+
+import { Content, Id, ContentProfile } from "./styles";
 
 export function Profile({ id, name, bio, followers, avatar, company, nick }: profileProps) {
     return (
