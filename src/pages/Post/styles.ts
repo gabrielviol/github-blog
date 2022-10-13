@@ -6,6 +6,5 @@ export const Container = styled.div`
     height: 110%;
     margin: 0 auto;
     padding-bottom: 5rem;
-    background: ${props => props.theme['base-background']};
-    
+    background: ${props => props.theme['base-background']};    
 `;

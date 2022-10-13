@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
-import { Container } from "../styles";
+import { Container } from "./styles";
 
 type Info = {
     user: {

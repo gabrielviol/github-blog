@@ -60,9 +60,11 @@ export function Post() {
     // if (loading) return <Loading />;
 
     return (
+        <div>
         <Container>
             <Info info={post}/>
             {/* <SectionContent body={post.body} /> */}
         </Container>
+        </div>
     )
 }
