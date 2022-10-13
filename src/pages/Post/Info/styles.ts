@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -26,13 +27,18 @@ export const Container = styled.div`
             font-size: 12px;
             font-weight: 700;
             line-height: 160%;
+            border-bottom: 1px solid transparent;
         }
+        .github{
+            transition: .3s;
+        }
+        .github:hover{
+        border-bottom: 1px solid ${props => props.theme['blue']};
+        
+    }
         svg {
-            width: 15px;
-            height: 15px;
-        }
-        &:hover{
-            filter: brightness(0.7);
+            width: 14px;
+            height: 14px;
         }
     }
 
@@ -41,13 +47,14 @@ export const Container = styled.div`
         font-weight: 700;
         line-height: 130%;
         color: ${props => props.theme['base-title']};
-        margin-top: 1rem;
+        margin-top: 1.5rem;
     }
 
     ul {
     display: flex;
     list-style: none;
     gap: 1.5rem;
+    margin-top: 0.5rem;
         
         li {
             display: flex;
@@ -59,5 +66,21 @@ export const Container = styled.div`
             height: 18px;
             color: ${props => props.theme['base-label']};
         }
+        span {
+            font-size: 16px;
+            line-height: 160%;
+            font-weight: 400;
+            color: ${props => props.theme['base-span']};
+        }
     }
 `;
+
+
+
+export const Linkk = styled(Link)`
+    transition: .3s;
+    
+        :hover{
+            border-bottom: 1px solid ${props => props.theme['blue']};
+        }
+`

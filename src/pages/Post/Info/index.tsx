@@ -1,12 +1,13 @@
-import { faArrowAltCircleDown, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { Link } from "react-router-dom";
 
-import { formatDistanceToNow } from "date-fns";
-import { ptBR } from "date-fns/locale";
-
-import { Container } from "./styles";
+import { Container, Linkk } from "./styles";
+import { CalendarIcon } from '../../../assets/Calender';
+import { ArrowIcon } from '../../../assets/Arrow';
+import { ChatIcon } from '../../../assets/Chat';
+import { difference } from '../../../utils/date';
 
 type Info = {
     user: {
@@ -21,17 +22,17 @@ interface InfoProps {
     info: Info;
 }
 
-export function Info({ info }: InfoProps){
-
-    return(
+export function Info({ info }: InfoProps) {
+    // const time = formatDistanceToNow(new Date(info.updatedAt), { addSuffix: true, locale: ptBR })
+    const timePhrase = difference(new Date(info.updatedAt));
+    return (
         <Container>
             <header>
-                <Link to="/">
-                <FontAwesomeIcon icon={faArrowAltCircleDown} />
+                <Linkk to="/">
+                    <ArrowIcon />
                     <span>voltar</span>
-                </Link>
-
-                <a href={info.url}>
+                </Linkk>
+                <a href={info.url} className="github">
                     <span>Ver no github</span>
                     <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                 </a>
@@ -41,12 +42,18 @@ export function Info({ info }: InfoProps){
 
             <ul>
                 <li>
-                <FontAwesomeIcon icon={faGithub} />
-                <span>{info.user?.login}</span>
+                    <FontAwesomeIcon icon={faGithub} />
+                    <span>{info.user?.login}</span>
                 </li>
 
                 <li>
-                <FontAwesomeIcon icon={faGithub} />
+                    <CalendarIcon />
+                    <span>{timePhrase}</span>
+                </li>
+
+                <li>
+                    <ChatIcon />
+                    <span>{info.comments} comentários</span>
                 </li>
             </ul>
         </Container>

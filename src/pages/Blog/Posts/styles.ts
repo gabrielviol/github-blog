@@ -54,6 +54,7 @@ export const PostContent = styled(Link)`
         width: 416px;
         height: 260px;
         padding: 2rem;
+        border: 2px solid transparent;
 
         display: flex;
         flex-direction: column;
@@ -62,15 +63,11 @@ export const PostContent = styled(Link)`
         border-radius: 10px;
 
         text-decoration: none;
-        background: ${props => props.theme['base-post']};      
+        background: ${props => props.theme['base-post']};
+        transition: .3s;
         
         &:hover{
-        outline: 2px solid ${props => props.theme['base-label']};
-
-        h1{
-            text-decoration: underline;
-        }
-        
+        border: 2px solid ${props => props.theme['base-label']};        
         }
     
     div{

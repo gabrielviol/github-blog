@@ -60,7 +60,8 @@ export const Id = styled.div`
         display: flex;
         align-items: center;
         gap: 5px;
-        transition: .5s;
+        transition: .3s;
+        border-bottom: 1px solid transparent;
         
        a{
         display: flex;
@@ -81,6 +82,5 @@ export const Id = styled.div`
     }
     div:hover{
         border-bottom: 1px solid ${props => props.theme['blue']};
-        transform: scale(1);
     }
 `
