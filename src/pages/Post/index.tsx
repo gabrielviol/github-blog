@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
+import { Content } from "./Content";
 import { Info } from "./Info";
 import { Container } from "./styles";
 
@@ -63,7 +64,7 @@ export function Post() {
         <div>
         <Container>
             <Info info={post}/>
-            {/* <SectionContent body={post.body} /> */}
+            <Content body={post.body} />
         </Container>
         </div>
     )
