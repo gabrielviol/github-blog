@@ -1,4 +1,4 @@
-import { faArrowAltCircleDown, faRegistered } from '@fortawesome/free-solid-svg-icons'
+import { faArrowAltCircleDown, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { Link } from "react-router-dom";
@@ -33,7 +33,7 @@ export function Info({ info }: InfoProps){
 
                 <a href={info.url}>
                     <span>Ver no github</span>
-                    <FontAwesomeIcon icon={faRegistered} />
+                    <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                 </a>
             </header>
 
