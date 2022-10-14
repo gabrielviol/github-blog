@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
 
-export const Container = styled.div`
+export const Container = styled.section`
     width: 864px;
-    height: 168px;
     margin: 0 auto;
     padding: 2rem 2rem;
 `
@@ -13,10 +12,9 @@ export const Markdown = styled(ReactMarkdown)`
   font-weight: 700;
   font-size: 1rem;
   line-height: 160%;
-  color: ${({ theme }) => theme["gray-200"]};
+  color: ${({ theme }) => theme['base-text']};
   code {
-    span {
-      font-family: "Fira Code";
-    }
+        font-weight: 300;
+        font-family: "Fira Code";    
   }
 `;

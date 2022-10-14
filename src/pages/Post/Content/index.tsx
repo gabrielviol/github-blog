@@ -1,8 +1,8 @@
 import { Container, Markdown } from "./styles";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
-import remarkGfm from "remark-gfm";
-import rehypeRaw from "rehype-katex";
+import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex';
 
 interface ContentProps {
     body: string;
@@ -13,18 +13,17 @@ export function Content({ body }: ContentProps){
       <Container>
       <Markdown
         children={body}
-        remarkPlugins={[[remarkGfm, { singleTilde: false }]]}
-        rehypePlugins={[rehypeRaw]}
+        remarkPlugins={[[remarkMath, { singleTilde: false }]]}
+        rehypePlugins={[rehypeKatex]}
         components={{
           code({ node, inline, className, children, ...props }) {
-            console.log({ inline, className });
 
-            const match = /language-(\w+)/.exec(className || "");
+            const match = /language-(\w+)/.exec(className || '')
             return !inline && match ? (
               <SyntaxHighlighter
-                children={String(children).replace(/\n$/, "")}
-                style={dracula as any}
-                language={match[1] ?? "bash"}
+                children={String(children).replace(/\n$/, '')}
+                style={dark as any}
+                language={match[1]}
                 PreTag="div"
                 {...props}
               />
