@@ -41,7 +41,7 @@ type SearchSchemaType = zod.infer<typeof searchSchema>;
 export function Posts() {
     const [response, setResponse] = useState<IssuesResponseProps>()
 
-    const { handleSubmit, register } = useForm<SearchSchemaType>({
+    const { handleSubmit, register, watch } = useForm<SearchSchemaType>({
         resolver: zodResolver(searchSchema),
     });
 
@@ -81,7 +81,14 @@ export function Posts() {
                     <span>Publicações</span>
                     <p>{response?.total ?? 0} Publicações</p>
                 </div>
-                <input type="text" placeholder="Buscar conteúdo" />
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <input
+                        type="text"
+                        placeholder="Buscar conteúdo"
+                        disabled={!response?.posts}
+                        {...register('query')}
+                    />
+                </form>
             </InputContent>
             <TableContainer>
                 {response?.posts.map(post => {
