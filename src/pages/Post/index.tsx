@@ -18,7 +18,7 @@ type OriginalPost = {
     body: string;
     number: number;
     user: User;
-    url: string;
+    html_url: string;
     comments: number;
 }
 
@@ -43,7 +43,7 @@ export function Post() {
     const post = useMemo(() => {
         if (!data) return {};
 
-        const { user, body, number, updated_at, title, url, comments } = data;
+        const { user, body, number, updated_at, title, html_url, comments } = data;
 
         return {
             user: {
@@ -53,7 +53,7 @@ export function Post() {
             id: number,
             updatedAt: updated_at,
             title,
-            url,
+            url: html_url,
             comments,
         };
     }, [data]) as PostProps;
