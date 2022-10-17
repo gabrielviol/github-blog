@@ -2,7 +2,7 @@
   "name": "githubblog",
   "private": true,
   "version": "0.0.0",
-  "homepage": "gabrielviol.github.io/github-blog/",
+  "homepage": "/github-blog",
   "type": "module",
   "scripts": {
     "dev": "vite",
