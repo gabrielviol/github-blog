@@ -72,7 +72,7 @@ Error generating stack: `+i.message+`
             margin-right: auto;
         }
     
-`,AF="/github-blog/assets/cover.997176a0.png";var ec={exports:{}},tc={};/**
+`,AF="/assets/cover.997176a0.png";var ec={exports:{}},tc={};/**
  * @license React
  * react-jsx-runtime.production.min.js
  *
