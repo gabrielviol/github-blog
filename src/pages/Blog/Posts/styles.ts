@@ -26,6 +26,8 @@ p{
 }
 input{
     margin-top: 15px;
+    padding: 0 10px;
+    color: ${props => props.theme['base-subtitle']};
     background: ${props => props.theme['base-input']};
     width: 100%;
     height: 50px;
@@ -37,7 +39,6 @@ input::placeholder{
     font-weight: 400;
     font-size: 16px;
     line-height: 160%;
-    padding: 10px;
 }
 `
 
