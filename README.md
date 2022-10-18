@@ -8,7 +8,8 @@
 
 <p align="center">
   <a href="#rocket-about-challenge">About challenge</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#"></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#fire-techs-and-tools">Techs and tools</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#bookmark-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#"></a>
 </p>
 
@@ -19,4 +20,10 @@ In this challenge, I developed an application that uses the GITHUB API to fetch 
 - Listing my profile with image, number of followers, name and other information available through the GITHUB API.
 - Listing and filtering of all issues in the repository with a small summary of its content.
 - Single page for each complete post (issue).
+
+## :fire: Techs and tools
+
+ ## :bookmark: Layout
+
+The layout was designed and made available by team [Rocketseat](https://www.rocketseat.com.br/) and is available on [figma](https://www.figma.com/community/file/1138814951106121051) for consultation
 
