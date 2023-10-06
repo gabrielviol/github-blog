@@ -33,6 +33,7 @@ In this challenge, I developed an application that uses the GITHUB API to fetch 
 -  [React-Markdown](https://github.com/remarkjs/react-markdown)
 -  [Zod](https://github.com/colinhacks/zod#nodenpm)
 -  [Vite](https://vitejs.dev/)
+-  [Chakra UI](https://chakra-ui.com/)
 
  ## :bookmark: Layout
 
