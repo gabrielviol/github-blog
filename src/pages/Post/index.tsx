@@ -39,7 +39,6 @@ export function Post() {
     const { data, loading } = useFetch<OriginalPost>(
         `/repos/${USERNAME}/${REPO}/issues/${numberId}`
     );
-
     const post = useMemo(() => {
         if (!data) return {};
 
@@ -58,13 +57,11 @@ export function Post() {
         };
     }, [data]) as PostProps;
 
-    // if (loading) return <Loading />;
-
     return (
         <div>
         <Container>
-            <Info info={post}/>
-            <Content body={post.body} />
+            <Info info={post} loading={loading}/>
+            <Content body={post.body} loading={loading}/>
         </Container>
         </div>
     )
